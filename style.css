@@ -1,0 +1,138 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+}
+
+body {
+    display: block;
+    /* align-items: center; */
+    /* justify-content: center; */
+    background: #F5C171;
+    
+}
+
+header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 70px;
+    background-color: #3f3f3f;
+    color: #fff;
+    padding: 12px 30px;
+    align-items: center;
+}
+
+section {}
+
+nav {
+    margin-left: auto;
+    margin-right: 25px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li:hover {
+    background-color: #444;
+}
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    min-width: 160px;
+    z-index: 1000;
+}
+
+nav ul li ul li a {
+    padding: 10px 15px;
+    color: #fff;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li:hover {
+    background-color: #555;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+nav a:hover {
+    color: rgb(203, 203, 203);
+}
+
+nav a:active {
+    color: rgb(172, 172, 172);
+}
+
+.section1 {
+    height: 1080px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.section1 h1 {
+    color: white;
+    font-size: 64px;
+    margin-top: 200px;
+}
+
+button {
+    margin: 1px;
+}
+
+.clouds {
+    height: 100%;
+    width: 100%;
+    margin-top: 630px;
+}
+
+.cloud1 {
+    height: 283px;
+    width: 100%;
+    background-image: url(images/clouds.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.cloud2 {
+    height: 283px;
+    width: 100%;
+    background-image: url(images/cloudsReversed.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
