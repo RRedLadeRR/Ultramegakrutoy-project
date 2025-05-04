@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">  
+    <title>Memepedia</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <div class="search_bar2">
+                    <span class="material-symbols-outlined">search</span>
+                    <input type="text" placeholder="Search any meme...">
+                </div>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="suggestions.html">Suggest meme</a></li>
+                <li><a href="#header" >Meme categories⠀<span class="categories-list-triangle"> ◀</span></a>
+                    <ul>
+                        <li><a href="images.html">Images</a></li>
+                        <li><a href="videos.html">Videos</a></li>
+                        <li><a href="gifs.html">Gifs</a></li>
+                    </ul>
+                </li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main2">
+        <h3>Want to suggest your meme?</h3>
+        <div class="auth-container">
+            <section class="auth-box">
+                <h2>Suggest your meme</h2>
+                <form action="index.html" method="post">
+                    <input type="username" placeholder="Username" required>
+                    <input type="file" name="" id="">
+                    <input type="text" placeholder="Meme title">
+                    <input type="text" placeholder="Meme description">
+                    <input type="text" placeholder="Meme tags(tag, tag, tag...)">
+                    <input type="text" placeholder="Message for developers">
+                    <button type="submit">Send</button>
+                </form>
+            </section>
+        </div>
+    </div>
+    <footer id="footer">
+        <h2>Wikimemia</h2>
+        <p>Wikimemia is a website dedicated to memes and meme culture. Explore, share, and create memes with us!</p>
+        <ul class="socials">
+            <li><a href="#">Telegram</a></li>
+            <li><a href="#">YouTube</a></li>
+        </ul>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
