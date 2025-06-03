@@ -53,6 +53,12 @@ document.addEventListener("DOMContentLoaded", () => {
     fsDiv.addEventListener('click', () => {
         fsDiv.remove();
     });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            fsDiv.remove();
+        }
+    });
 }
 
 function createImageMemes() {
@@ -65,12 +71,15 @@ function createImageMemes() {
         memeDiv.className = "meme";
         memeDiv.innerHTML = `
             <div class="panel">
-            <a href="memes/${name}" download>
-                <img src="images/download.png" alt="download">
-            </a>
-            <a class="fullscreen-icon" href="#img-fs" onclick="fullscreen(this)">
-                <img src="images/fullscreen.png" alt="fullscreen">
-            </a>
+            <span class="meme-name-in-panel" >${name}</span>
+               <div class="panel-right"> 
+                <a href="memes/${name}" download>
+                    <img src="images/download.png" alt="download">
+                </a>
+                <a class="fullscreen-icon" href="#img-fs" onclick="fullscreen(this)">
+                    <img src="images/fullscreen.png" alt="fullscreen">
+                </a>
+                </div>
             </div>
             <img src="memes/${name}" alt="${name}">
         `;
@@ -79,6 +88,8 @@ function createImageMemes() {
     });
 }
 
+
+    
 function createVideoMemes() {
     fetch('videos.json')
     .then(response => response.json())
@@ -89,12 +100,15 @@ function createVideoMemes() {
         memeDiv.className = "meme";
         memeDiv.innerHTML = `
             <div class="panel">
-            <a href="memes/${name}" download>
-                <img src="images/download.png" alt="download">
-            </a>
-            <a class="fullscreen-icon" href="#img-fs" onclick="fullscreen(this)">
-                <img src="images/fullscreen.png" alt="fullscreen">
-            </a>
+            <span class="meme-name-in-panel" >${name}</span>
+               <div class="panel-right"> 
+                <a href="memes/${name}" download>
+                    <img src="images/download.png" alt="download">
+                </a>
+                <a class="fullscreen-icon" href="#img-fs" onclick="fullscreen(this)">
+                    <img src="images/fullscreen.png" alt="fullscreen">
+                </a>
+                </div>
             </div>
             <video controls src="memes/${name}" type="video/mp4" alt="${name}">
         `;
