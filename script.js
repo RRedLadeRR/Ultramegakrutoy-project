@@ -1,16 +1,31 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const path = window.location.pathname;
+// document.addEventListener("DOMContentLoaded", () => {
+//     const path = window.location.pathname;
   
-    if (path === "/index.html") {
-        createImageMemes();
-        createVideoMemes();
-    } else if (path === "/images.html") {
-        createImageMemes();
-    } else if (path === "/videos.html") {
-        createVideoMemes();
-    }
-  });
+//     if (path === "/index.html") {
+//         createImageMemes();
+//         createVideoMemes();
+//     } else if (path === "/images.html") {
+//         createImageMemes();
+//     } else if (path === "/videos.html") {
+//         createVideoMemes();
+//     }
+//   });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const path = window.location.pathname.split("/").pop(); // тільки "index.html", "images.html" тощо
+    // console.log("Завантажено, файл:", path);
+
+    if (path === "" || path === "index.html") {
+        createImageMemes();
+        createVideoMemes();
+    } else if (path === "images.html") {
+        createImageMemes();
+    } else if (path === "videos.html") {
+        createVideoMemes();
+    } else {
+        // console.warn("Шлях не підтримується:", path);
+    }
+});
 
 
   function fullscreen(el) {
@@ -71,14 +86,14 @@ function createImageMemes() {
         memeDiv.className = "meme";
         memeDiv.innerHTML = `
             <div class="panel">
-            <span class="meme-name-in-panel" >${name}</span>
-               <div class="panel-right"> 
-                <a href="memes/${name}" download>
-                    <img src="images/download.png" alt="download">
-                </a>
-                <a class="fullscreen-icon" href="#img-fs" onclick="fullscreen(this)">
-                    <img src="images/fullscreen.png" alt="fullscreen">
-                </a>
+                <span class="meme-name-in-panel" >${name}</span>
+                <div class="panel-right"> 
+                    <a href="memes/${name}" download>
+                        <img src="images/download.png" alt="download">
+                    </a>
+                    <a class="fullscreen-icon" href="#img-fs" onclick="fullscreen(this)">
+                        <img src="images/fullscreen.png" alt="fullscreen">
+                    </a>
                 </div>
             </div>
             <img src="memes/${name}" alt="${name}">
@@ -87,8 +102,6 @@ function createImageMemes() {
         });
     });
 }
-
-
     
 function createVideoMemes() {
     fetch('videos.json')
@@ -100,14 +113,14 @@ function createVideoMemes() {
         memeDiv.className = "meme";
         memeDiv.innerHTML = `
             <div class="panel">
-            <span class="meme-name-in-panel" >${name}</span>
-               <div class="panel-right"> 
-                <a href="memes/${name}" download>
-                    <img src="images/download.png" alt="download">
-                </a>
-                <a class="fullscreen-icon" href="#img-fs" onclick="fullscreen(this)">
-                    <img src="images/fullscreen.png" alt="fullscreen">
-                </a>
+                <span class="meme-name-in-panel" >${name}</span>
+                <div class="panel-right"> 
+                    <a href="memes/${name}" download>
+                        <img src="images/download.png" alt="download">
+                    </a>
+                    <a class="fullscreen-icon" href="#img-fs" onclick="fullscreen(this)">
+                        <img src="images/fullscreen.png" alt="fullscreen">
+                    </a>
                 </div>
             </div>
             <video controls src="memes/${name}" type="video/mp4" alt="${name}">
