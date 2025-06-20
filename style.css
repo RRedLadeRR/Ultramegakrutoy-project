@@ -35,7 +35,7 @@ header {
     left: 0;
     right: 0;
     z-index: 1002;
-    height: 65px;
+    min-height: 65px;
     background-color: #4f6ba3;
     color: #fff;
     padding: 10px 30px;
@@ -55,12 +55,13 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 50px;
+    gap: 35px;
     margin: 0;
     padding: 0;
     flex-wrap: wrap;
     align-items: center;
     text-align: center;
+    align-content: center;
 }
 
 nav ul li {
@@ -234,7 +235,7 @@ button {
     overflow: hidden;
     height: 253px;
     /* min-height: 253px; */
-    background-color: white;
+    /* background-color: white; */
 }
 
 .panel {
@@ -583,8 +584,51 @@ footer a {
     width: 64px;
 }
 
-@media screen and (max-width: 768px){
+
+
+@media (max-width: 1000px){
     header {
-        font-size: 10px;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px 20px;
+    }
+    
+    header a{
+        font-size: 18px;
+    }
+
+    nav ul {
+        gap: 25px;
+    }
+
+    nav a {
+        padding: 8px !important; 
+    }
+}
+
+@media (max-width: 850px) {
+
+    .search_bar {
+        width: 70%;
+        margin-top: 8vh;
+    }
+    
+    .search_bar:hover {
+      width: 73%;
+      height: 36px;
+      margin-top: 8vh;
+}
+
+}
+
+@media (max-width: 450px) {
+    .title h1 {
+        font-size: 12vw;
+    }
+}
+
+@media (max-width: 650px) {
+    .search_bar {
+        margin-top: 8vh;
     }
 }
