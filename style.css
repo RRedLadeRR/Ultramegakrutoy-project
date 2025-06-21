@@ -1,3 +1,4 @@
+
 .comic-relief-regular {
     font-family: "Comic Relief", system-ui;
     font-weight: 400;
@@ -29,7 +30,7 @@ body {
 header {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row;
     position: fixed;
     top: 0;
     left: 0;
@@ -45,6 +46,41 @@ header {
 h3 {
     color: white;
 }
+
+
+.logo {
+    width: 64px;
+    height: 64px;
+    margin-left: 15px;
+    background-color: red;
+    border-radius: 100%;
+    color: white;
+    text-align: center;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.title-in-header {
+    display: none;
+    padding: 10px;
+    height: 50%;
+}
+
+.title-in-header h2 {
+    font-size: 30px;
+    color: white;
+    margin: 15px 0;
+    font-weight: bold;
+    font-family: "Comic Relief", sans-serif;
+}
+
+
+.menu-icon {
+    display: none !important;
+
+}
+
 
 nav {
     margin-left: auto;
@@ -273,6 +309,10 @@ button {
     transform: translateY(0);
 }
 
+.meme:hover {
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
 .meme-name-in-panel {
     /* color: yellowgreen; */
     color: white;
@@ -336,7 +376,7 @@ button {
     align-items: center;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     margin-top: 20px;
-    transition: width 0.4s ease, height 0.4s ease;
+    transition: all 0.4s ease;
 }
 
 .search_bar input {
@@ -353,30 +393,21 @@ button {
 }
 
 .search_bar:hover {
-    width: 700px;
-    height: 40px;
-    display: flex;
-    cursor: pointer;
-    padding: 10px 20px;
-    background: #fff;
-    border-radius: 30px;
-    align-items: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    margin-top: 20px;
-
+    transform: scale(1.08);
 }
+
 
 .search_bar input:hover::placeholder {
     color: #393939;
     font-weight: 500;
-    font-size: 19px;
+    font-size: 18px;
 }
 
 .search_bar input::placeholder {
     color: gray;
     font-weight: 500;
     font-size: 17px;
-    transition: color 0.2s ease, font-size 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 
@@ -606,6 +637,39 @@ footer a {
     }
 }
 
+
+
+
+/* Phone and tablet */
+@media (max-width: 768px) {
+    header {
+        gap: 40px;
+    }
+    
+    nav ul {
+        display: none;
+    }
+
+    .title-in-header {
+        display: inline-block;
+    }
+
+    .menu-icon {
+        display: inline-block !important;
+        font-size: 35px !important;
+        margin-top: 7px !important;
+    }
+
+    nav {
+        margin-right: 5px;
+    }
+}
+
+
+
+
+
+
 @media (max-width: 850px) {
 
     .search_bar {
@@ -622,13 +686,54 @@ footer a {
 }
 
 @media (max-width: 450px) {
+    header {
+        gap: 25px;
+    }
+    
     .title h1 {
         font-size: 12vw;
     }
+
+
+    .title-in-header h2 {
+        font-size: 25px;
+    }
+    .meme-container {
+        padding: 30px !important;
+    }
+
+
 }
+
+@media (max-width: 380px) {
+    header {
+        gap: 15px;
+    }
+    
+    .title-in-header h2 {
+        font-size: 20px;
+    }
+
+    .menu-icon {
+        font-size: 30px !important;
+        margin-top: 5px !important;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+        margin-left: 10px;
+    }
+
+}
+
+
 
 @media (max-width: 650px) {
     .search_bar {
         margin-top: 8vh;
     }
 }
+
+
+
