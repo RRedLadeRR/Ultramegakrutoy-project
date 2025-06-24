@@ -96,7 +96,7 @@ function createImageMemes() {
                     </a>
                 </div>
             </div>
-            <img src="memes/${name}" alt="${name}">
+            <img src="memes/${name}" data-name="${name}" alt="${name}">
         `;
         memeContainer.appendChild(memeDiv);
         });
@@ -123,26 +123,64 @@ function createVideoMemes() {
                     </a>
                 </div>
             </div>
-            <video controls src="memes/${name}" type="video/mp4" alt="${name}">
+            <video controls src="memes/${name}" data-name="${name}" type="video/mp4" alt="${name}">
         `;
         memeContainer.appendChild(memeDiv);
         });
     });
 }
 
-document.getElementById("searchInput").addEventListener("input", function () {
-    const query = this.value.toLowerCase();
-    const images = document.querySelectorAll(".meme-container .meme");
+// document.addEventListener("DOMContentLoaded", () => {
+//     const searchInput = document.getElementById("searchInput");
+//     const noResultsMessage = document.getElementById("noResultsMessage");
 
-    images.forEach((item) => {
-        const name = item.querySelector("img").getAttribute("data-name").toLowerCase();
-        if (name.includes(query)) {
-            item.style.display = "block";
-        } else {
-            item.style.display = "none";
-        }
-    });
-});
+//     searchInput.addEventListener("input", function () {
+//         const query = this.value.toLowerCase();
+//         const memes = document.querySelectorAll(".meme-container .meme");
+
+//         let anyVisible = false;
+
+//         console.log("Ищу:", query);
+
+//         memes.forEach((item) => {
+//             const media = item.querySelector("img, video");
+//             const nameAttr = media ? media.getAttribute("data-name") : null;
+//             console.log("Проверяю элемент:", nameAttr);
+
+//             const name = nameAttr ? nameAttr.toLowerCase() : "";
+
+//             if (name.includes(query)) {
+//                 item.style.display = "block";
+//                 anyVisible = true;
+//             } else {
+//                 item.style.display = "none";
+//             }
+//         });
+
+//         if (memes.length === 0) {
+//             // Контент ещё не загружен
+//             noResultsMessage.style.display = "none";
+//         } else if (anyVisible) {
+//             noResultsMessage.style.display = "none";
+//         } else {
+//             noResultsMessage.style.display = "block";
+//         }
+//     });
+// });
+
+        // memes.forEach((item) => {
+        //     const media = item.querySelector("img, video");
+        //     const nameAttr = media ? media.getAttribute("data-name") : null;
+        //     const name = nameAttr ? nameAttr.toLowerCase() : "";
+
+        //     if (name.includes(query)) {
+        //         item.style.display = "block";
+        //         anyVisible = true;
+        //     } else {
+        //         item.style.display = "none";
+        //     }
+        // });
+
 
 
 // Page color change .no-text-color-change t odisable

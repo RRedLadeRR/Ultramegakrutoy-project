@@ -4,25 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval';">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="stylesheet" href="style.css"> <!-- CSS file -->
-    
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Google fonts connect -->
-    
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Google fonts cross-origin -->
-    
     <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet"> <!-- Comic Relief font -->
-    
-
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" /> <!-- Google Material Symbols -->
-    
     <title>Wikimemia</title>
 </head>
-
 <body>
-    
     <header>
-        <div class="logo">LOGO</div>
+        <!-- <div class="logo">LOGO</div> -->
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/WM_logo.svg" alt="WM_logo">
+            </a>
+        </div>
         <div class="title-in-header">
             <h2>Wikimemia</h2>
         </div>
@@ -50,7 +46,7 @@
         <h1>Wikimemia</h1>
         <div class="search_bar">
             <span class="material-symbols-outlined search-icon">search</span>
-            <input type="text" placeholder="Search any meme...">
+            <input type="text" id="searchInput" placeholder="Search any meme...">
         </div>
         <div class="cloud1">
             <img src="images/clouds.png" alt="">
@@ -60,7 +56,9 @@
         <div class="cloud2">
             <img src="images/cloudsReversed.png" alt="">
         </div>
-        <div class="meme-container"></div>
+        <div class="meme-container">
+            <p id="noResultsMessage" style="display: none;">Nothing found</p>
+        </div>
         <div class="cloud1">
             <img src="images/clouds.png" alt="">
         </div>

@@ -53,13 +53,17 @@ h3 {
     width: 64px;
     height: 64px;
     margin-left: 15px;
-    background-color: red;
+    /* background-color: red; */
     border-radius: 100%;
     color: white;
     text-align: center;
     display: flex; 
     align-items: center;
     justify-content: center;
+}
+
+.logo a img {
+    width: 64px;
 }
 
 .title-in-header {
@@ -616,7 +620,10 @@ footer a {
     width: 64px;
 }
 
-
+#noResultsMessage {
+    font-size: 18px;
+    color: #888;
+}
 
 @media (max-width: 1000px){
     header {
