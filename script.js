@@ -129,3 +129,77 @@ function createVideoMemes() {
         });
     });
 }
+
+document.getElementById("searchInput").addEventListener("input", function () {
+    const query = this.value.toLowerCase();
+    const images = document.querySelectorAll(".meme-container .meme");
+
+    images.forEach((item) => {
+        const name = item.querySelector("img").getAttribute("data-name").toLowerCase();
+        if (name.includes(query)) {
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
+    });
+});
+
+
+// Page color change .no-text-color-change t odisable
+
+// const accentInput = document.getElementById('accentColor');
+
+// if (accentInput) {
+//   accentInput.addEventListener('input', (e) => {
+//     const newColor = e.target.value;
+//     applyAccentColor(newColor);
+//     localStorage.setItem('accentColor', newColor);
+//     document.documentElement.style.setProperty('--accent-color', newColor);
+
+//     const isDark = isDarkColor(newColor);
+//     const textColor = isDark ? '#ffffff' : '#000000';
+
+//     document.body.style.color = textColor;
+
+//     document.querySelectorAll('*:not(.no-text-color-change):not(.no-text-color-change *)').forEach(el => {
+//       el.style.color = textColor;
+//     });
+
+//     document.querySelectorAll('.no-text-color-change td.today').forEach(el => {
+//       el.style.color = textColor;
+//     });
+//   });
+// }
+
+// function isDarkColor(hex) {
+//   const r = parseInt(hex.substr(1, 2), 16);
+//   const g = parseInt(hex.substr(3, 2), 16);
+//   const b = parseInt(hex.substr(5, 2), 16);
+//   const luminance = (0.299 * r + 0.587 * g + 0.114 * b);
+//   return luminance < 128;
+// }
+
+// function applyAccentColor(color) {
+//   document.documentElement.style.setProperty('--accent-color', color);
+
+//   const isDark = isDarkColor(color);
+//   const textColor = isDark ? '#ffffff' : '#000000';
+
+//   document.body.style.color = textColor;
+
+//   document.querySelectorAll('*:not(.no-text-color-change):not(.no-text-color-change *)')
+//     .forEach(el => {
+//       el.style.color = textColor;
+//     });
+
+//   if (accentInput) {
+//     accentInput.value = color;
+//   }
+// }
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const savedColor = localStorage.getItem('accentColor');
+//   if (savedColor) {
+//     applyAccentColor(savedColor);
+//   }
+// });
